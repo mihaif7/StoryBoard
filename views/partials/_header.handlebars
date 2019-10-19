@@ -1,0 +1,61 @@
+<nav class="grey darken-3">
+    <div class="container">
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo center">StoryBoard</a>
+            <a href="#" data-activates="main-menu" class="hidden-on-med-and-up button-collapse">
+                <i class="fa fa-bars"></i>
+            </a>
+            
+            <!-- Right nav-->
+            <ul class="right hide-on-med-and-down">
+                {{#if user}}
+                    <!-- Dropdown Trigger -->
+                    <li><a class='dropdown-button' href='/dashboard' data-activates='dropdown1'><i class="fas fa-user right"></i>{{user.firstName}}</a></li>
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li><a href="/stories/"> Public stories</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a href="/stories/my">My stories</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/auth/logout">Logout</a></li>
+                    </ul>
+                {{else}}
+                    <li><a href="/stories"><i class="fa fa-book left"></i> Public stories</a></li>
+                   
+                {{/if}}
+            </ul>
+            <!-- Side Menu -->
+            <ul class="side-nav" id="main-menu">
+                <li>
+                    <li>
+                        <div class="user-view">
+                            <div class="background">
+                                <img src="/sidenav-bg.jpg">               
+                            </div>
+                            {{#if user}}
+                                <a href="#"><img class="circle" src="{{user.image}}"></a>
+                                <a href="#"><span class="white-text name">{{user.firstName}}&nbsp;{{user.lastName}}</span></a>
+                                <a href="#"><span class="white-text email">{{user.email}}</span></a>
+                            {{else}}
+                                &nbsp;
+                            {{/if}}
+                        </div>
+                        </li>
+                    {{#if user}}                        
+                        <li><a href="/stories/"><i class="fa fa-book left"></i> Public stories</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/dashboard"> <i class="fa fa-cog"></i>Dashboard</a></li>
+                        <li><a href="/stories/mystories"><i class="fa fa-book left"></i> My stories</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/auth/logout"> <i class="fa fa-sign-out-alt"></i> Logout</a></li>
+                    {{else}}
+                        <li><a href="/stories"><i class="fa fa-book left"></i> Public stories</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/auth/google"> <i class="fab fa-google left"></i>Login with Google</a></li>
+                    {{/if}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    padding-bottom: 100px;
+}
+
+.story-text {
+    height: 120px;
+    overflow: hidden;
+}
+
+.dash-status {
+    text-transform: capitalize;
+}
+
+#delete-form {
+    display: inline;
+}
